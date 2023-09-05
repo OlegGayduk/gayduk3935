@@ -5,7 +5,7 @@ const  dir = __dirname;
 const dirPub = dir+'/public/html/';
 const dirScript = dir + '/public/'
 
-const config = require('./config.json')
+const config = require("./config.json'")
 
 const students = require("./students.json")
 

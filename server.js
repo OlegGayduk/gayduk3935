@@ -1,3 +1,5 @@
+var port = process.env.PORT || 3000;
+
 const express = require('express');
 const fs = require('fs');
 const bP = require('body-parser');
@@ -5,11 +7,7 @@ const  dir = __dirname;
 const dirPub = dir+'/public/html/';
 const dirScript = dir + '/public/'
 
-const config = require("config.json")
-
 const students = require("./students.json")
-
-let port = config.port
 
 let app = express();
 

@@ -18,7 +18,7 @@ const renderStudents = (array)=>{
         html+=
         `
         <div class="card" style="width: 100%;">
-            <div class="card-body" onclick="MsgShow(${i}, ${array[i].group})" group=${array[i].group}>
+            <div class="card-body" onclick="MsgShow(${i})" group=${array[i].group}>
               ${array[i].name}                             
             </div>
         </div>
@@ -47,7 +47,7 @@ function getXhrType() {
     return x;
 }
 
-function MsgShow(id, group) {
+function MsgShow(id) {
     var x = getXhrType();
 
     x.open("POST", "/get_name", true);
@@ -65,7 +65,7 @@ function MsgShow(id, group) {
         if(this.responseText == 0) {
             alert("Error!");
         } else {
-            alert(this.responseText + " " + group);
+            alert(this.responseText + " " + document.getElementById("students").children[id.id].children[0].getAttribute("group"));
         }   
         
         x.onerror = function() {
